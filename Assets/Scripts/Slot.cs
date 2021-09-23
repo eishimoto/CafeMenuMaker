@@ -24,36 +24,53 @@ public class Slot : MonoBehaviour
 
     private void OnSlide(String whatWasSent)
     {
-        if (whatWasSent == "W")
+        if (whatWasSent == "w")
         {
             if (up != null)
                 return;
             Slot currentSlot = this;
             SlideUp(currentSlot);
         }
-        if (whatWasSent == "D")
+        if (whatWasSent == "d")
         {
- 
+            if (right != null)
+                return;
+            Slot currentSlot = this;
+            SlideRight(currentSlot);
         }
-        if (whatWasSent == "A")
+        if (whatWasSent == "a")
         {
-  
+            if (left != null)
+                return;
+            Slot currentSlot = this;
+            SlideLeft(currentSlot);
         }
-        if (whatWasSent == "S")
+        if (whatWasSent == "s")
         {
+            if (down != null)
+                return;
+            Slot currentSlot = this;
+            SlideDown(currentSlot);
+        }
 
+        GameControl.ticker++;
+        if(GameControl.ticker == 4)
+        {
+            GameControl.instance.Spawn();
         }
     }
 
     private void SlideUp(Slot currentSlot)
     {
         if (currentSlot.down == null)
+        {
             return;
+        }
 
         if (currentSlot.fill != null)
         {
             Slot nextSlot = currentSlot.down;
-            while (nextSlot.down != null && nextSlot.fill == null)
+            while(nextSlot.down != null && nextSlot.fill == null)
             {
                 nextSlot = nextSlot.down;
             }
@@ -66,7 +83,7 @@ public class Slot : MonoBehaviour
                     currentSlot.fill = nextSlot.fill;
                     nextSlot.fill = null;
                 }
-                else
+                else if (currentSlot.down.fill != nextSlot.fill)
                 {
                     nextSlot.fill.transform.parent = currentSlot.down.transform;
                     currentSlot.down.fill = nextSlot.fill;
@@ -89,10 +106,164 @@ public class Slot : MonoBehaviour
                 SlideUp(currentSlot);
             }
 
-
             if (currentSlot.down == null)
                 return;
             SlideUp(currentSlot.down);
+        }
+    }
+
+    private void SlideLeft(Slot currentSlot)
+    {
+        if (currentSlot.right == null)
+        {
+            return;
+        }
+
+        if (currentSlot.fill != null)
+        {
+            Slot nextSlot = currentSlot.right;
+            while (nextSlot.right != null && nextSlot.fill == null)
+            {
+                nextSlot = nextSlot.right;
+            }
+            if (nextSlot.fill != null)
+            {
+                if (currentSlot.fill.value == nextSlot.fill.value)
+                {
+                    nextSlot.fill.Double();
+                    nextSlot.fill.transform.parent = currentSlot.transform;
+                    currentSlot.fill = nextSlot.fill;
+                    nextSlot.fill = null;
+                }
+                else if(currentSlot.right.fill != nextSlot.fill)
+                {
+                    nextSlot.fill.transform.parent = currentSlot.right.transform;
+                    currentSlot.right.fill = nextSlot.fill;
+                    nextSlot.fill = null;
+                }
+            }
+        }
+        else
+        {
+            Slot nextSlot = currentSlot.right;
+            while (nextSlot.right != null && nextSlot.fill == null)
+            {
+                nextSlot = nextSlot.right;
+            }
+            if (nextSlot.fill != null)
+            {
+                nextSlot.fill.transform.parent = currentSlot.transform;
+                currentSlot.fill = nextSlot.fill;
+                nextSlot.fill = null;
+                SlideUp(currentSlot);
+            }
+
+            if (currentSlot.right == null)
+                return;
+            SlideLeft(currentSlot.right);
+        }
+    }
+
+    private void SlideRight(Slot currentSlot)
+    {
+        if (currentSlot.left == null)
+        {
+            return;
+        }
+
+        if (currentSlot.fill != null)
+        {
+            Slot nextSlot = currentSlot.left;
+            while (nextSlot.left != null && nextSlot.fill == null)
+            {
+                nextSlot = nextSlot.left;
+            }
+            if (nextSlot.fill != null)
+            {
+                if (currentSlot.fill.value == nextSlot.fill.value)
+                {
+                    nextSlot.fill.Double();
+                    nextSlot.fill.transform.parent = currentSlot.transform;
+                    currentSlot.fill = nextSlot.fill;
+                    nextSlot.fill = null;
+                }
+                else if(currentSlot.left.fill != nextSlot.fill)
+                {
+                    nextSlot.fill.transform.parent = currentSlot.left.transform;
+                    currentSlot.left.fill = nextSlot.fill;
+                    nextSlot.fill = null;
+                }
+            }
+        }
+        else
+        {
+            Slot nextSlot = currentSlot.left;
+            while (nextSlot.left != null && nextSlot.fill == null)
+            {
+                nextSlot = nextSlot.left;
+            }
+            if (nextSlot.fill != null)
+            {
+                nextSlot.fill.transform.parent = currentSlot.transform;
+                currentSlot.fill = nextSlot.fill;
+                nextSlot.fill = null;
+                SlideUp(currentSlot);
+            }
+
+            if (currentSlot.left == null)
+                return;
+            SlideRight(currentSlot.left);
+        }
+    }
+    private void SlideDown(Slot currentSlot)
+    {
+        if (currentSlot.up == null)
+        {
+            return;
+        }
+
+        if (currentSlot.fill != null)
+        {
+            Slot nextSlot = currentSlot.up;
+            while (nextSlot.up != null && nextSlot.fill == null)
+            {
+                nextSlot = nextSlot.up;
+            }
+            if (nextSlot.fill != null)
+            {
+                if (currentSlot.fill.value == nextSlot.fill.value)
+                {
+                    nextSlot.fill.Double();
+                    nextSlot.fill.transform.parent = currentSlot.transform;
+                    currentSlot.fill = nextSlot.fill;
+                    nextSlot.fill = null;
+                }
+                else if(currentSlot.up.fill != nextSlot.fill)
+                {
+                    nextSlot.fill.transform.parent = currentSlot.up.transform;
+                    currentSlot.up.fill = nextSlot.fill;
+                    nextSlot.fill = null;
+                }
+            }
+        }
+        else
+        {
+            Slot nextSlot = currentSlot.up;
+            while (nextSlot.up != null && nextSlot.fill == null)
+            {
+                nextSlot = nextSlot.up;
+            }
+            if (nextSlot.fill != null)
+            {
+                nextSlot.fill.transform.parent = currentSlot.transform;
+                currentSlot.fill = nextSlot.fill;
+                nextSlot.fill = null;
+                SlideUp(currentSlot);
+            }
+
+            if (currentSlot.up == null)
+                return;
+            SlideDown(currentSlot.up);
         }
     }
 }

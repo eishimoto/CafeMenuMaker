@@ -5,19 +5,29 @@ using System;
 
 public class GameControl : MonoBehaviour
 {
-
     //Slots and prefab
     [SerializeField] private GameObject squarePrefab;
-    [SerializeField] private Transform[] allSlots;
-
-
+    [SerializeField] private Slot[] allSlots;
 
     //Action
     public static Action<String> slide;
 
+    //Statics
+    public static GameControl instance;
+    public static int ticker;
+
+    private void OnEnable()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
+
     private void Start()
     {
-        
+        InicialSpawn();
+        InicialSpawn();
     }
 
     private void Update()
@@ -34,19 +44,23 @@ public class GameControl : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.W))
         {
-            slide("W");
+            ticker = 0;
+            slide("w");
         }
         if (Input.GetKeyDown(KeyCode.D))
         {
-            slide("D");
+            ticker = 0;
+            slide("d");
         }
         if (Input.GetKeyDown(KeyCode.S))
         {
-            slide("S");
+            ticker = 0;
+            slide("s");
         }
         if (Input.GetKeyDown(KeyCode.A))
         {
-            slide("A");
+            ticker = 0;
+            slide("a");
         }
     }
 
@@ -57,25 +71,54 @@ public class GameControl : MonoBehaviour
 
     public void Spawn()
     {
+        bool isFull = true;
+        for (int i = 0; i < allSlots.Length; i++)
+        {
+            if(allSlots[i].fill == null)
+            {
+                isFull = false;
+            }
+        }
+        if(isFull == true)
+        {
+            return;
+        }
+
         int spawnPlace = UnityEngine.Random.Range(0, allSlots.Length);
-        if (allSlots[spawnPlace].childCount != 0)
+        if (allSlots[spawnPlace].transform.childCount != 0)
         {
             Spawn();
             return;
         }
 
-        GameObject tempFill = Instantiate(squarePrefab, allSlots[spawnPlace]);
+        GameObject tempFill = Instantiate(squarePrefab, allSlots[spawnPlace].transform);
         FillSquare fillSquare = tempFill.GetComponent<FillSquare>();
         allSlots[spawnPlace].GetComponent<Slot>().fill = fillSquare;
 
         int chance = UnityEngine.Random.Range(0, 10);
         if (chance < 8f)
         {
-            fillSquare.FillUpdate(3);
+            fillSquare.FillUpdate(2);
         }
         else if(chance >= 8f)
         {
-            fillSquare.FillUpdate(6);
+            fillSquare.FillUpdate(4);
         }
+    }
+    public void InicialSpawn()
+    {
+        int spawnPlace = UnityEngine.Random.Range(0, allSlots.Length);
+        if (allSlots[spawnPlace].transform.childCount != 0)
+        {
+            Spawn();
+            return;
+        }
+
+        GameObject tempFill = Instantiate(squarePrefab, allSlots[spawnPlace].transform);
+        FillSquare fillSquare = tempFill.GetComponent<FillSquare>();
+        allSlots[spawnPlace].GetComponent<Slot>().fill = fillSquare;
+
+            fillSquare.FillUpdate(2);
+
     }
 }

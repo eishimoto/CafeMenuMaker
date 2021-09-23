@@ -12,7 +12,7 @@ public class FillSquare : MonoBehaviour
     public int value;
 
     //bool
-    private bool combined;
+    private bool combined = false;
 
     public void FillUpdate(int valueIn)
     {
@@ -27,12 +27,13 @@ public class FillSquare : MonoBehaviour
             combined = false;
             transform.localPosition = Vector3.MoveTowards(transform.localPosition, Vector3.zero, speed * Time.deltaTime);
         }
-        else if(!combined)
+        else if(combined == false)
         {
             if(transform.parent.GetChild(0) != this.transform)
             {
                 Destroy(transform.parent.GetChild(0).gameObject);
             }
+
             combined = true;
         }
     }
@@ -40,6 +41,7 @@ public class FillSquare : MonoBehaviour
     public void Double()
     {
         value *= 2;
+        Score.instance.ScoreUpdate(value);
         valueDsiplayText.text = value.ToString();
     }
 }
