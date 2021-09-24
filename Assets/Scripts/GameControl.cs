@@ -110,7 +110,7 @@ public class GameControl : MonoBehaviour
         int spawnPlace = UnityEngine.Random.Range(0, allSlots.Length);
         if (allSlots[spawnPlace].transform.childCount != 0)
         {
-            Spawn();
+            InicialSpawn();
             return;
         }
 
@@ -118,7 +118,15 @@ public class GameControl : MonoBehaviour
         FillSquare fillSquare = tempFill.GetComponent<FillSquare>();
         allSlots[spawnPlace].GetComponent<Slot>().fill = fillSquare;
 
+        int chance = UnityEngine.Random.Range(0, 10);
+        if (chance < 8f)
+        {
             fillSquare.FillUpdate(2);
-
+        }
+        else if (chance >= 8f)
+        {
+            fillSquare.FillUpdate(4);
+        }
     }
+
 }

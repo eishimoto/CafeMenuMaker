@@ -17,7 +17,7 @@ public class FillSquare : MonoBehaviour
     public void FillUpdate(int valueIn)
     {
         value = valueIn;
-        valueDsiplayText.text = valueIn.ToString();
+        valueDsiplayText.text = value.ToString();
     }
 
     private void Update()
@@ -33,7 +33,6 @@ public class FillSquare : MonoBehaviour
             {
                 Destroy(transform.parent.GetChild(0).gameObject);
             }
-
             combined = true;
         }
     }
@@ -41,7 +40,7 @@ public class FillSquare : MonoBehaviour
     public void Double()
     {
         value *= 2;
-        Score.instance.ScoreUpdate(value);
         valueDsiplayText.text = value.ToString();
+        Score.instance.ScoreUpdate(value);
     }
 }

@@ -9,7 +9,13 @@ public class Score : MonoBehaviour
     private int score;
 
     public static Score instance;
- 
+    private void OnEnable()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
     public void ScoreUpdate(int scoreIn)
     {
         score = scoreIn;
