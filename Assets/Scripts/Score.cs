@@ -8,6 +8,9 @@ public class Score : MonoBehaviour
     [SerializeField] private Text scoreText;
     private int score;
 
+    [SerializeField] private Text highScoreText;
+    public int myHighScore;
+
     public static Score instance;
     private void OnEnable()
     {
@@ -16,9 +19,22 @@ public class Score : MonoBehaviour
             instance = this;
         }
     }
+
+    private void Start()
+    {
+        highScoreText.text = PlayerPrefs.GetInt("HighScore", 0).ToString();
+    }
+
     public void ScoreUpdate(int scoreIn)
     {
-        score = scoreIn;
+        score += scoreIn;
         scoreText.text = score.ToString();
+
+        if(score > PlayerPrefs.GetInt("HighScore",0))
+        {
+            myHighScore = score;
+            highScoreText.text = myHighScore.ToString();
+            PlayerPrefs.SetInt("HighScore", myHighScore);
+        }
     }
 }

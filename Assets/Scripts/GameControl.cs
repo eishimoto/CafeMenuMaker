@@ -26,23 +26,18 @@ public class GameControl : MonoBehaviour
 
     private void Start()
     {
-        InicialSpawn();
-        InicialSpawn();
+        Spawn();
+        Spawn();
     }
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            Spawn();
-        }
-
         KeyboardControl();
     }
 
     public void KeyboardControl()
     {
-        if(Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W))
         {
             ticker = 0;
             slide("w");
@@ -69,21 +64,25 @@ public class GameControl : MonoBehaviour
 
     }
 
-    public void Spawn()
+    public void FullCheck()
     {
         bool isFull = true;
         for (int i = 0; i < allSlots.Length; i++)
         {
-            if(allSlots[i].fill == null)
+            if (allSlots[i].fill == null)
             {
                 isFull = false;
             }
         }
-        if(isFull == true)
+        if (isFull == true)
         {
             return;
         }
+        Spawn();
+    }
 
+    private void Spawn()
+    {
         int spawnPlace = UnityEngine.Random.Range(0, allSlots.Length);
         if (allSlots[spawnPlace].transform.childCount != 0)
         {
@@ -105,28 +104,4 @@ public class GameControl : MonoBehaviour
             fillSquare.FillUpdate(4);
         }
     }
-    public void InicialSpawn()
-    {
-        int spawnPlace = UnityEngine.Random.Range(0, allSlots.Length);
-        if (allSlots[spawnPlace].transform.childCount != 0)
-        {
-            InicialSpawn();
-            return;
-        }
-
-        GameObject tempFill = Instantiate(squarePrefab, allSlots[spawnPlace].transform);
-        FillSquare fillSquare = tempFill.GetComponent<FillSquare>();
-        allSlots[spawnPlace].GetComponent<Slot>().fill = fillSquare;
-
-        int chance = UnityEngine.Random.Range(0, 10);
-        if (chance < 8f)
-        {
-            fillSquare.FillUpdate(2);
-        }
-        else if (chance >= 8f)
-        {
-            fillSquare.FillUpdate(4);
-        }
-    }
-
 }

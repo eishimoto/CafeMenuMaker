@@ -39,8 +39,8 @@ public class FillSquare : MonoBehaviour
 
     public void Double()
     {
-        value *= 2;
-        valueDsiplayText.text = value.ToString();
+        value *= 2;       
         Score.instance.ScoreUpdate(value);
+        valueDsiplayText.text = value.ToString();
     }
 }

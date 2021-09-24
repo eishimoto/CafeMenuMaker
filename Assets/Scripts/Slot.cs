@@ -64,7 +64,7 @@ public class Slot : MonoBehaviour
         GameControl.ticker++;
         if (GameControl.ticker == 4)
         {
-            GameControl.instance.Spawn();
+            GameControl.instance.FullCheck();
         }
     }
 
@@ -73,7 +73,6 @@ public class Slot : MonoBehaviour
         if (currentSlot.down == null)
             return;
 
-        // Debug.Log(currentSlot);
         if (currentSlot.fill != null)
         {
             Slot nextSlot = currentSlot.down;
@@ -90,10 +89,10 @@ public class Slot : MonoBehaviour
                     currentSlot.fill = nextSlot.fill;
                     nextSlot.fill = null;
                 }
-                else
+                else if(currentSlot.down.fill != nextSlot.fill)
                 {
                     nextSlot.fill.transform.parent = currentSlot.down.transform;
-                    currentSlot.fill = nextSlot.fill;
+                    currentSlot.down.fill = nextSlot.fill;
                     nextSlot.fill = null;
                 }
             }
@@ -112,20 +111,18 @@ public class Slot : MonoBehaviour
                 nextSlot.fill = null;
                 SlideUp(currentSlot);
             }
-
-            if (currentSlot.down == null)
-            {
-                return;
-            }
-            SlideUp(currentSlot.down);
         }
+        if (currentSlot.down == null)
+        {
+            return;
+        }
+        SlideUp(currentSlot.down);
     }
     void SlideRight(Slot currentSlot)
     {
         if (currentSlot.left == null)
             return;
 
-        // Debug.Log(currentSlot);
         if (currentSlot.fill != null)
         {
             Slot nextSlot = currentSlot.left;
@@ -142,10 +139,10 @@ public class Slot : MonoBehaviour
                     currentSlot.fill = nextSlot.fill;
                     nextSlot.fill = null;
                 }
-                else
+                else if(currentSlot.left.fill != nextSlot.fill)
                 {
                     nextSlot.fill.transform.parent = currentSlot.left.transform;
-                    currentSlot.fill = nextSlot.fill;
+                    currentSlot.left.fill = nextSlot.fill;
                     nextSlot.fill = null;
                 }
             }
@@ -164,20 +161,18 @@ public class Slot : MonoBehaviour
                 nextSlot.fill = null;
                 SlideRight(currentSlot);
             }
-
-            if (currentSlot.left == null)
-            {
-                return;
-            }
-            SlideRight(currentSlot.left);
         }
+        if (currentSlot.left == null)
+        {
+            return;
+        }
+        SlideRight(currentSlot.left);
     }
     void SlideLeft(Slot currentSlot)
     {
         if (currentSlot.right == null)
             return;
 
-        // Debug.Log(currentSlot);
         if (currentSlot.fill != null)
         {
             Slot nextSlot = currentSlot.right;
@@ -194,10 +189,10 @@ public class Slot : MonoBehaviour
                     currentSlot.fill = nextSlot.fill;
                     nextSlot.fill = null;
                 }
-                else
+                else if (currentSlot.right.fill != nextSlot.fill)
                 {
                     nextSlot.fill.transform.parent = currentSlot.right.transform;
-                    currentSlot.fill = nextSlot.fill;
+                    currentSlot.right.fill = nextSlot.fill;
                     nextSlot.fill = null;
                 }
             }
@@ -216,20 +211,18 @@ public class Slot : MonoBehaviour
                 nextSlot.fill = null;
                 SlideLeft(currentSlot);
             }
-
-            if (currentSlot.right == null)
-            {
-                return;
-            }
-            SlideLeft(currentSlot.right);
         }
+        if (currentSlot.right == null)
+        {
+            return;
+        }
+        SlideLeft(currentSlot.right);
     }
     void SlideDown(Slot currentSlot)
     {
         if (currentSlot.up == null)
             return;
 
-        // Debug.Log(currentSlot);
         if (currentSlot.fill != null)
         {
             Slot nextSlot = currentSlot.up;
@@ -246,10 +239,10 @@ public class Slot : MonoBehaviour
                     currentSlot.fill = nextSlot.fill;
                     nextSlot.fill = null;
                 }
-                else
+                else if (currentSlot.up.fill != nextSlot.fill)
                 {
                     nextSlot.fill.transform.parent = currentSlot.up.transform;
-                    currentSlot.fill = nextSlot.fill;
+                    currentSlot.up.fill = nextSlot.fill;
                     nextSlot.fill = null;
                 }
             }
@@ -267,13 +260,13 @@ public class Slot : MonoBehaviour
                 currentSlot.fill = nextSlot.fill;
                 nextSlot.fill = null;
                 SlideDown(currentSlot);
-            }
-
-            if (currentSlot.up == null)
-            {
-                return;
-            }
-            SlideDown(currentSlot.up);
+            }       
         }
+        if (currentSlot.up == null)
+        {
+            return;
+        }
+        SlideDown(currentSlot.up);
     }
+
 }
