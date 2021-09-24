@@ -75,7 +75,7 @@ public class Score : MonoBehaviour
         GameControl.canMove = true;
         GameControl.lost = false;
         winPanel.SetActive(false);
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
     public void Contine()
     {
@@ -88,7 +88,7 @@ public class Score : MonoBehaviour
         GameControl.canMove = true;
         GameControl.lost = false;
         losePanel.SetActive(false);
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
 }

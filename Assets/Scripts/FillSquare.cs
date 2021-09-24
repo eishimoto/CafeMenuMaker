@@ -15,30 +15,30 @@ public class FillSquare : MonoBehaviour
     private bool combined = false;
 
     //Color
-    private Image myImage;
+    Image myImage;
 
     public void FillUpdate(int valueIn)
     {
         value = valueIn;
         valueDsiplayText.text = value.ToString();
 
-        int colorIndex = GetColorIndex(value);
-        myImage = GetComponent<Image>();
-        myImage.color = GameControl.instance.myColors[colorIndex];
+        //int colorIndex = GetColorIndex(value);
+        //myImage = GetComponent<Image>();
+        //myImage.color = GameControl.instance.myColors[colorIndex];
     }
 
-    int GetColorIndex(int number)
-    {
-        int index = 0;
-        while(number != 1)
-        {
-            index++;
-            number /= 2;
-        }
+    //int GetColorIndex(int number)
+    //{
+    //    int index = 0;
+    //    while(number != 1)
+    //    {
+    //        index++;
+    //        number /= 2;
+    //    }
 
-        index--;
-        return index;
-    }
+    //    index--;
+    //    return index;
+    //}
 
 
     private void Update()
@@ -63,8 +63,8 @@ public class FillSquare : MonoBehaviour
         value *= 2;
         valueDsiplayText.text = value.ToString();
 
-        int colorIndex = GetColorIndex(value);
-        myImage.color = GameControl.instance.myColors[colorIndex];
+        //int colorIndex = GetColorIndex(value);
+        //myImage.color = GameControl.instance.myColors[colorIndex];
 
         Score.instance.ScoreUpdate(value);
         Score.instance.WinPanel(value);

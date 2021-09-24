@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using System;
 
 public class GameControl : MonoBehaviour
@@ -31,9 +32,9 @@ public class GameControl : MonoBehaviour
 
     private void Start()
     {
-        Spawn();
-        Spawn();
         canMove = true;
+        Spawn();
+        Spawn();
     }
 
     private void Update()
