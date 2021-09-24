@@ -15,6 +15,8 @@ public class GameControl : MonoBehaviour
     //Statics
     public static GameControl instance;
     public static int ticker;
+    public static bool lost = false;
+    public static bool canMove;
 
     private void OnEnable()
     {
@@ -28,6 +30,7 @@ public class GameControl : MonoBehaviour
     {
         Spawn();
         Spawn();
+        canMove = true;
     }
 
     private void Update()
@@ -37,25 +40,28 @@ public class GameControl : MonoBehaviour
 
     public void KeyboardControl()
     {
-        if (Input.GetKeyDown(KeyCode.W))
+        if (canMove == true)
         {
-            ticker = 0;
-            slide("w");
-        }
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            ticker = 0;
-            slide("d");
-        }
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            ticker = 0;
-            slide("s");
-        }
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            ticker = 0;
-            slide("a");
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                ticker = 0;
+                slide("w");
+            }
+            if (Input.GetKeyDown(KeyCode.D))
+            {
+                ticker = 0;
+                slide("d");
+            }
+            if (Input.GetKeyDown(KeyCode.S))
+            {
+                ticker = 0;
+                slide("s");
+            }
+            if (Input.GetKeyDown(KeyCode.A))
+            {
+                ticker = 0;
+                slide("a");
+            }
         }
     }
 
@@ -76,6 +82,8 @@ public class GameControl : MonoBehaviour
         }
         if (isFull == true)
         {
+            lost = true;
+            canMove = false;
             return;
         }
         Spawn();

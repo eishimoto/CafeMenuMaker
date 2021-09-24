@@ -42,5 +42,6 @@ public class FillSquare : MonoBehaviour
         value *= 2;       
         Score.instance.ScoreUpdate(value);
         valueDsiplayText.text = value.ToString();
+        Score.instance.WinPanel(value);
     }
 }

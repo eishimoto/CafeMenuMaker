@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Score : MonoBehaviour
 {
@@ -9,7 +10,12 @@ public class Score : MonoBehaviour
     private int score;
 
     [SerializeField] private Text highScoreText;
-    public int myHighScore;
+    private int myHighScore;
+
+    [SerializeField] GameObject winPanel;
+    [SerializeField] GameObject losePanel;
+
+    public int scoreToBeat;
 
     public static Score instance;
     private void OnEnable()
@@ -24,6 +30,14 @@ public class Score : MonoBehaviour
     {
         highScoreText.text = PlayerPrefs.GetInt("HighScore", 0).ToString();
     }
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.K))
+        {
+            PlayerPrefs.DeleteAll();
+        }
+        LosePanel();
+    }
 
     public void ScoreUpdate(int scoreIn)
     {
@@ -37,4 +51,44 @@ public class Score : MonoBehaviour
             PlayerPrefs.SetInt("HighScore", myHighScore);
         }
     }
+
+    public void WinPanel(int scoreToWin)
+    { 
+        if(scoreToWin == scoreToBeat)
+        {
+            winPanel.SetActive(true);
+            GameControl.canMove = false;
+        }
+    }
+
+    private void LosePanel()
+    {
+        if(GameControl.lost == true)
+        {
+            losePanel.SetActive(true);
+            GameControl.canMove = false;
+        }
+    }
+
+    public void Restart()
+    {
+        GameControl.canMove = true;
+        GameControl.lost = false;
+        winPanel.SetActive(false);
+        SceneManager.LoadScene(0);
+    }
+    public void Contine()
+    {
+        winPanel.SetActive(false);
+        GameControl.canMove = true;
+    }
+
+    public void RestartLose()
+    {
+        GameControl.canMove = true;
+        GameControl.lost = false;
+        losePanel.SetActive(false);
+        SceneManager.LoadScene(0);
+    }
+
 }
