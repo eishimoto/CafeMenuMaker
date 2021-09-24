@@ -18,6 +18,9 @@ public class GameControl : MonoBehaviour
     public static bool lost = false;
     public static bool canMove;
 
+    //Color
+    public Color[] myColors;
+
     private void OnEnable()
     {
         if (instance == null)
