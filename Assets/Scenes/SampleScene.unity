@@ -1213,7 +1213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe08c4e2780010f4093e7355a57c1a36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSwipelenght: 0
+  minSwipelenght: 200
 --- !u!224 &409004375 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 773137404526227135, guid: 272b00011a438c2439fcbb571fcc3409, type: 3}
@@ -3657,7 +3657,7 @@ MonoBehaviour:
   highScoreText: {fileID: 736443432}
   winPanel: {fileID: 175099578}
   losePanel: {fileID: 1990599601}
-  scoreToBeat: 64
+  scoreToBeat: 2048
 --- !u!1001 &1275496561
 PrefabInstance:
   m_ObjectHideFlags: 0

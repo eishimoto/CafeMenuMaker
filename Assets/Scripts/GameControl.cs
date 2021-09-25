@@ -39,7 +39,8 @@ public class GameControl : MonoBehaviour
 
     private void Update()
     {
-        KeyboardControl();
+        //KeyboardControl();
+        Swipe();
     }
 
     public void KeyboardControl()
@@ -69,9 +70,35 @@ public class GameControl : MonoBehaviour
         }
     }
 
-    public void TouchControl()
+    public void Swipe()
     {
-
+        if (canMove == true)
+        {
+            if (TouchControl.swipeUp == true)
+            {
+                ticker = 0;
+                slide("w");
+                TouchControl.swipeUp = false;
+            }
+            if (TouchControl.swipeRight == true)
+            {
+                ticker = 0;
+                slide("d");
+                TouchControl.swipeRight = false;
+            }
+            if (TouchControl.swipeDown == true)
+            {
+                ticker = 0;
+                slide("s");
+                TouchControl.swipeDown = false;
+            }
+            if (TouchControl.swipeLeft == true)
+            {
+                ticker = 0;
+                slide("a");
+                TouchControl.swipeLeft = false;
+            }
+        }
     }
 
     public void FullCheck()
