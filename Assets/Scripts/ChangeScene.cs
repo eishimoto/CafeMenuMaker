@@ -5,7 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
 {  
-    public string game;
+    //String
+    [SerializeField] private string game;
+
+    //Panel
+    [SerializeField] private GameObject credit;
+
+    
     void Start()
     {
         
@@ -20,5 +26,15 @@ public class ChangeScene : MonoBehaviour
     public void StartGame(int sceneNumber)
     {
         SceneManager.LoadScene(sceneNumber);
+    }
+
+    public void CreditPanel()
+    {
+        credit.SetActive(true);
+    }
+
+    public void CloseCredit()
+    {
+        credit.SetActive(false);
     }
 }
