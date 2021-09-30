@@ -39,8 +39,8 @@ public class GameControl : MonoBehaviour
 
     private void Update()
     {
-        //KeyboardControl();
-        Swipe();
+        KeyboardControl();
+        //Swipe();
     }
 
     public void KeyboardControl()
