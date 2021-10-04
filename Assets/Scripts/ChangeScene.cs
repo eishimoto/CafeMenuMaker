@@ -10,8 +10,7 @@ public class ChangeScene : MonoBehaviour
 
     //Panel
     [SerializeField] private GameObject credit;
-
-    
+ 
     void Start()
     {
         
