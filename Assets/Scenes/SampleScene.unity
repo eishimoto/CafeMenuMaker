@@ -4492,6 +4492,10 @@ MonoBehaviour:
   - {r: 0.36112404, g: 1, b: 0, a: 1}
   - {r: 0, g: 1, b: 0.33205724, a: 1}
   _keyboardOrTouch: 1
+  minValue: 2
+  maxValue: 4
+  minValue2: 2
+  maxValue2: 4
 --- !u!114 &1266795600
 MonoBehaviour:
   m_ObjectHideFlags: 0

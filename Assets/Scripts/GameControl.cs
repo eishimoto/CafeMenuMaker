@@ -24,6 +24,11 @@ public class GameControl : MonoBehaviour
 
     //int to change in inspector
     [SerializeField] private int _keyboardOrTouch;
+    [SerializeField] private int minValue;
+    [SerializeField] private int maxValue;
+    [SerializeField] private int minValue2;
+    [SerializeField] private int maxValue2;
+
 
     private void OnEnable()
     {
@@ -142,14 +147,23 @@ public class GameControl : MonoBehaviour
         FillSquare fillSquare = tempFill.GetComponent<FillSquare>();
         allSlots[spawnPlace].GetComponent<Slot>().fill = fillSquare;
 
-        int chance = UnityEngine.Random.Range(0, 10);
+        int chance = UnityEngine.Random.Range(0, 20);
+
         if (chance < 8f)
         {
-            fillSquare.FillUpdate(2);
+            fillSquare.FillUpdate(minValue);
         }
-        else if(chance >= 8f)
+        else if(chance <= 10f)
         {
-            fillSquare.FillUpdate(4);
+            fillSquare.FillUpdate(maxValue);
+        }
+        if(chance < 18f && chance > 10f)
+        {
+            fillSquare.FillUpdate(minValue2);
+        }
+        if(chance >= 18f) 
+        {
+            fillSquare.FillUpdate(maxValue2);
         }
     }
 }

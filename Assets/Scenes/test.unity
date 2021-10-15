@@ -5534,7 +5534,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62fd28f560201054f8a7c089a1d9d450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  squarePrefab: {fileID: 7719327418541745942, guid: 2b639b29569f8634ba3ea65ae8072ce1, type: 3}
+  squarePrefab: {fileID: 6144015802420638150, guid: b28a146e4c12655428571226793e306a, type: 3}
   allSlots:
   - {fileID: 110647547}
   - {fileID: 194225666}
@@ -5552,6 +5552,15 @@ MonoBehaviour:
   - {fileID: 34771984}
   - {fileID: 1429206476}
   - {fileID: 981566474}
+  - {fileID: 1977308041}
+  - {fileID: 1798095905}
+  - {fileID: 2124589384}
+  - {fileID: 811688748}
+  - {fileID: 2021792129}
+  - {fileID: 145911929}
+  - {fileID: 1719402448}
+  - {fileID: 1195656078}
+  - {fileID: 365155809}
   myColors:
   - {r: 1, g: 0, b: 0, a: 1}
   - {r: 1, g: 0.54365414, b: 0, a: 1}
@@ -5573,7 +5582,11 @@ MonoBehaviour:
   - {r: 0.7002876, g: 1, b: 0, a: 1}
   - {r: 0.36112404, g: 1, b: 0, a: 1}
   - {r: 0, g: 1, b: 0.33205724, a: 1}
-  KeyboardOrTouch: 1
+  _keyboardOrTouch: 1
+  minValue: 2
+  maxValue: 4
+  minValue2: 3
+  maxValue2: 6
 --- !u!114 &1266795600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5590,6 +5603,7 @@ MonoBehaviour:
   highScoreText: {fileID: 736443432}
   winPanel: {fileID: 175099578}
   losePanel: {fileID: 1990599601}
+  pausePanel: {fileID: 0}
   SceneIndex: 2
   scoreToBeat: 2048
 --- !u!1001 &1275496561
