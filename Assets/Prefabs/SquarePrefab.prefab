@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8683799294793373046}
   - component: {fileID: 7873280457048394420}
   - component: {fileID: 6533538961483658731}
+  - component: {fileID: 2271183598670859985}
   m_Layer: 5
   m_Name: SquarePrefab
   m_TagString: Untagged
@@ -92,6 +93,19 @@ MonoBehaviour:
   valueDsiplayText: {fileID: 2449300079380430942}
   speed: 3000
   value: 0
+--- !u!114 &2271183598670859985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 500487841680227425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cf8a6d532900dc4da1c66313815b183, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _clip: {fileID: 8300000, guid: eff4f3cb91ca6a74492cde8a2589a7c9, type: 3}
 --- !u!1 &2012396818923309008
 GameObject:
   m_ObjectHideFlags: 0

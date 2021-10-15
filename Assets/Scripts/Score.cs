@@ -6,17 +6,23 @@ using UnityEngine.SceneManagement;
 
 public class Score : MonoBehaviour
 {
+    //Pontos
     [SerializeField] private Text scoreText;
     private int score;
-
     [SerializeField] private Text highScoreText;
     private int myHighScore;
 
-    [SerializeField] GameObject winPanel;
-    [SerializeField] GameObject losePanel;
+    //Panels
+    [SerializeField] private GameObject winPanel;
+    [SerializeField] private GameObject losePanel;
+    [SerializeField] private GameObject pausePanel;
 
+
+    //Scene
+    [SerializeField] private int SceneIndex;
     public int scoreToBeat;
 
+    //Instance to use funcion in other script
     public static Score instance;
     private void OnEnable()
     {
@@ -70,6 +76,18 @@ public class Score : MonoBehaviour
         }
     }
 
+    public void Pause()
+    {
+        GameControl.canMove = false;
+        pausePanel.SetActive(true);
+    }
+
+    public void ClosePause()
+    {
+        pausePanel.SetActive(false);
+        GameControl.canMove = true;
+    }
+
     public void Restart()
     {
         GameControl.canMove = true;
@@ -88,7 +106,7 @@ public class Score : MonoBehaviour
         GameControl.canMove = true;
         GameControl.lost = false;
         losePanel.SetActive(false);
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(SceneIndex);
     }
 
     public void ExitGame()

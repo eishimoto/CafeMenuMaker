@@ -19,6 +19,10 @@ PrefabInstance:
       propertyPath: m_FontData.m_FontSize
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 6533538961483658731, guid: 8903433c29548e54fa1b2db5ffc2b81e, type: 3}
+      propertyPath: speed
+      value: 6000
+      objectReference: {fileID: 0}
     - target: {fileID: 7373558417788440037, guid: 8903433c29548e54fa1b2db5ffc2b81e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

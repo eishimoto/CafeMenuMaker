@@ -22,6 +22,9 @@ public class GameControl : MonoBehaviour
     //Color
     public Color[] myColors;
 
+    //int to change in inspector
+    [SerializeField] private int _keyboardOrTouch;
+
     private void OnEnable()
     {
         if (instance == null)
@@ -39,8 +42,14 @@ public class GameControl : MonoBehaviour
 
     private void Update()
     {
-        //KeyboardControl();
-        Swipe();
+        if (_keyboardOrTouch == 1)
+        {
+            KeyboardControl();
+        }
+        if (_keyboardOrTouch == 2)
+        {
+            Swipe();
+        }
     }
 
     public void KeyboardControl()
