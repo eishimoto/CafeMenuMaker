@@ -17,7 +17,6 @@ public class Score : MonoBehaviour
     [SerializeField] private GameObject losePanel;
     [SerializeField] private GameObject pausePanel;
 
-
     //Scene
     [SerializeField] private int SceneIndex;
     public int scoreToBeat;
