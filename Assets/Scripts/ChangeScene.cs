@@ -32,4 +32,9 @@ public class ChangeScene : MonoBehaviour
     {
         credit.SetActive(false);
     }
+    
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 }

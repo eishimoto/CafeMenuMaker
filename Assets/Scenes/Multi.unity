@@ -4585,6 +4585,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 64151986}
   highScoreText: {fileID: 736443432}
+  fourScore: 0
+  fiveScore: 0
+  reverseScore: 1
   winPanel: {fileID: 175099578}
   losePanel: {fileID: 1990599601}
   pausePanel: {fileID: 874501284}

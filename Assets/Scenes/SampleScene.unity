@@ -1617,7 +1617,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1266795600}
         m_TargetAssemblyTypeName: Score, Assembly-CSharp
-        m_MethodName: ExitGame
+        m_MethodName: RestartLose
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4567,7 +4567,6 @@ MonoBehaviour:
   - {r: 0.7002876, g: 1, b: 0, a: 1}
   - {r: 0.36112404, g: 1, b: 0, a: 1}
   - {r: 0, g: 1, b: 0.33205724, a: 1}
-  _keyboardOneOrTouchTwo: 2
   minValue: 2
   maxValue: 4
   minValue2: 2
@@ -4586,10 +4585,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 64151986}
   highScoreText: {fileID: 736443432}
+  fourScore: 1
+  fiveScore: 0
+  reverseScore: 0
   winPanel: {fileID: 175099578}
   losePanel: {fileID: 1990599601}
   pausePanel: {fileID: 874501284}
-  SceneIndex: 1
+  sceneIndex: 0
+  menuIndex: 0
   scoreToBeat: 2048
 --- !u!1001 &1275496561
 PrefabInstance:

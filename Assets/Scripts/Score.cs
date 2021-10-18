@@ -12,13 +12,19 @@ public class Score : MonoBehaviour
     [SerializeField] private Text highScoreText;
     private int myHighScore;
 
+    //bools for score
+    public bool fourScore;
+    public bool fiveScore;
+    public bool reverseScore;
+
     //Panels
     [SerializeField] private GameObject winPanel;
     [SerializeField] private GameObject losePanel;
     [SerializeField] private GameObject pausePanel;
 
     //Scene
-    [SerializeField] private int SceneIndex;
+    [SerializeField] private int sceneIndex;
+    [SerializeField] private int menuIndex;
     public int scoreToBeat;
 
     //bool
@@ -36,7 +42,19 @@ public class Score : MonoBehaviour
 
     private void Start()
     {
-        highScoreText.text = PlayerPrefs.GetInt("HighScore", 0).ToString();
+        if (fourScore)
+        {
+            highScoreText.text = PlayerPrefs.GetInt("HighScore", 0).ToString();
+        }
+        if (fiveScore)
+        {
+            highScoreText.text = PlayerPrefs.GetInt("HighScore1", 0).ToString();
+        }
+        if (reverseScore)
+        {
+            highScoreText.text = PlayerPrefs.GetInt("HighScore2", 0).ToString();
+        }
+
     }
     private void Update()
     {
@@ -52,11 +70,34 @@ public class Score : MonoBehaviour
         score += scoreIn;
         scoreText.text = score.ToString();
 
-        if(score > PlayerPrefs.GetInt("HighScore",0))
+        if (fourScore)
         {
-            myHighScore = score;
-            highScoreText.text = myHighScore.ToString();
-            PlayerPrefs.SetInt("HighScore", myHighScore);
+            if (score > PlayerPrefs.GetInt("HighScore", 0))
+            {
+                myHighScore = score;
+                highScoreText.text = myHighScore.ToString();
+                PlayerPrefs.SetInt("HighScore", myHighScore);
+            }
+        }
+
+        if (fiveScore)
+        {
+            if (score > PlayerPrefs.GetInt("HighScore1", 0))
+            {
+                myHighScore = score;
+                highScoreText.text = myHighScore.ToString();
+                PlayerPrefs.SetInt("HighScore1", myHighScore);
+            }
+        }
+
+        if (reverseScore)
+        {
+            if (score > PlayerPrefs.GetInt("HighScore2", 0))
+            {
+                myHighScore = score;
+                highScoreText.text = myHighScore.ToString();
+                PlayerPrefs.SetInt("HighScore2", myHighScore);
+            }
         }
     }
 
@@ -95,7 +136,7 @@ public class Score : MonoBehaviour
         GameControl.canMove = true;
         GameControl.lost = false;
         winPanel.SetActive(false);
-        SceneManager.LoadScene(SceneIndex);
+        SceneManager.LoadScene(sceneIndex);
     }
     public void Contine()
     {
@@ -109,12 +150,12 @@ public class Score : MonoBehaviour
         GameControl.canMove = true;
         GameControl.lost = false;
         losePanel.SetActive(false);
-        SceneManager.LoadScene(SceneIndex);
+        SceneManager.LoadScene(sceneIndex);
     }
 
     public void ExitGame()
     {
-        Application.Quit();
+        SceneManager.LoadScene(menuIndex);
     }
 
 }

@@ -6804,6 +6804,9 @@ MonoBehaviour:
   pausePanel: {fileID: 1368315011}
   SceneIndex: 2
   scoreToBeat: 3072
+  normalScore: 0
+  fiveScore: 1
+  reversoScore: 0
 --- !u!1001 &1275496561
 PrefabInstance:
   m_ObjectHideFlags: 0
