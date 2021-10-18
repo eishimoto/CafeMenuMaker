@@ -10,7 +10,7 @@ public class Slot : MonoBehaviour
     [SerializeField] private Slot up;
     [SerializeField] private Slot down;
 
-    public FillSquare fill;
+    public SquarePrefab fill;
 
     private void OnEnable()
     {

@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class FillSquare : MonoBehaviour
+public class SquarePrefab : MonoBehaviour
 {
     [SerializeField] private Text valueDsiplayText;
     [SerializeField] private float speed;
 
     //int
-    public  int value;
+    public int value;
 
     //bool
     private bool combined = false;
@@ -17,6 +17,10 @@ public class FillSquare : MonoBehaviour
     //Color
     Image myImage;
 
+    private void Update()
+    {
+        CombineCheck();
+    }
     public void FillUpdate(int valueIn)
     {
         value = valueIn;
@@ -26,6 +30,8 @@ public class FillSquare : MonoBehaviour
         myImage = GetComponent<Image>();
         myImage.color = GameControl.instance.myColors[colorindex];
     }
+
+   
 
     int GetColorIndex(int number)
     {
@@ -40,8 +46,7 @@ public class FillSquare : MonoBehaviour
         return index;
     }
 
-
-    private void Update()
+    private void CombineCheck()
     {
         if (transform.localPosition != Vector3.zero)
         {

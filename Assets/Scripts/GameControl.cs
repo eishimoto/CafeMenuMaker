@@ -144,26 +144,26 @@ public class GameControl : MonoBehaviour
         }
 
         GameObject tempFill = Instantiate(squarePrefab, allSlots[spawnPlace].transform);
-        FillSquare fillSquare = tempFill.GetComponent<FillSquare>();
-        allSlots[spawnPlace].GetComponent<Slot>().fill = fillSquare;
+        SquarePrefab SquarePrefab = tempFill.GetComponent<SquarePrefab>();
+        allSlots[spawnPlace].GetComponent<Slot>().fill = SquarePrefab;
 
         int chance = UnityEngine.Random.Range(0, 20);
 
         if (chance < 8f)
         {
-            fillSquare.FillUpdate(minValue);
+            SquarePrefab.FillUpdate(minValue);
         }
         else if(chance <= 10f)
         {
-            fillSquare.FillUpdate(maxValue);
+            SquarePrefab.FillUpdate(maxValue);
         }
         if(chance < 18f && chance > 10f)
         {
-            fillSquare.FillUpdate(minValue2);
+            SquarePrefab.FillUpdate(minValue2);
         }
         if(chance >= 18f) 
         {
-            fillSquare.FillUpdate(maxValue2);
+            SquarePrefab.FillUpdate(maxValue2);
         }
     }
 }
