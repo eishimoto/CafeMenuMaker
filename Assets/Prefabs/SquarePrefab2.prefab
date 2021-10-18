@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 9188895631259886259}
   - component: {fileID: 3076807618034101884}
   - component: {fileID: -7755433264769414159}
+  - component: {fileID: 6961554683843463987}
   m_Layer: 5
   m_Name: SquarePrefab2
   m_TagString: Untagged
@@ -93,6 +94,7 @@ MonoBehaviour:
   valueDsiplayText: {fileID: 5467372055031698189}
   speed: 6000
   value: 0
+  multiply: 1
 --- !u!114 &-7755433264769414159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106,6 +108,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _clip: {fileID: 8300000, guid: eff4f3cb91ca6a74492cde8a2589a7c9, type: 3}
+--- !u!95 &6961554683843463987
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6144015802420638150}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cc2279c436f897e41b7238d710345b76, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7872320816299346675
 GameObject:
   m_ObjectHideFlags: 0
@@ -174,10 +195,10 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 50
-    m_FontStyle: 0
-    m_BestFit: 1
-    m_MinSize: 5
-    m_MaxSize: 111
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 1
+    m_MaxSize: 153
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1

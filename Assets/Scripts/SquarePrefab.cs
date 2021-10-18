@@ -17,6 +17,9 @@ public class SquarePrefab : MonoBehaviour
     //Color
     Image myImage;
 
+    //bool
+    public bool multiply;
+
     private void Update()
     {
         CombineCheck();
@@ -62,13 +65,27 @@ public class SquarePrefab : MonoBehaviour
 
     public void Double()
     {
-        value *= 2;
-        valueDsiplayText.text = value.ToString();
+        if (multiply)
+        {
+            value *= 2;
+            valueDsiplayText.text = value.ToString();
 
-        int colorindex = GetColorIndex(value);
-        myImage.color = GameControl.instance.myColors[colorindex];
+            int colorindex = GetColorIndex(value);
+            myImage.color = GameControl.instance.myColors[colorindex];
 
-        Score.instance.ScoreUpdate(value);
-        Score.instance.WinPanel(value);
+            Score.instance.ScoreUpdate(10);
+            Score.instance.WinPanel(value);
+        }
+        else if(multiply == false)
+        {
+            value /= 2;
+            valueDsiplayText.text = value.ToString();
+
+            int colorindex = GetColorIndex(value);
+            myImage.color = GameControl.instance.myColors[colorindex];
+
+            Score.instance.ScoreUpdate(10);
+            Score.instance.WinPanel(value);
+        }
     }
 }

@@ -95,7 +95,7 @@ public class Score : MonoBehaviour
         GameControl.canMove = true;
         GameControl.lost = false;
         winPanel.SetActive(false);
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(SceneIndex);
     }
     public void Contine()
     {

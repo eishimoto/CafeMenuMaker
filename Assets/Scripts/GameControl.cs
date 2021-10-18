@@ -23,7 +23,6 @@ public class GameControl : MonoBehaviour
     public Color[] myColors;
 
     //int to change in inspector
-    [SerializeField] private int _keyboardOneOrTouchTwo;
     [SerializeField] private int minValue;
     [SerializeField] private int maxValue;
     [SerializeField] private int minValue2;
@@ -46,66 +45,32 @@ public class GameControl : MonoBehaviour
 
     private void Update()
     {
-        if (_keyboardOneOrTouchTwo == 1)
-        {
-            KeyboardControl();
-        }
-        if (_keyboardOneOrTouchTwo == 2)
-        {
-            Swipe();
-        }
+        Control();
     }
 
-    public void KeyboardControl()
+    public void Control()
     {
         if (canMove == true)
         {
-            if (Input.GetKeyDown(KeyCode.W))
-            {
-                ticker = 0;
-                slide("w");
-            }
-            if (Input.GetKeyDown(KeyCode.D))
-            {
-                ticker = 0;
-                slide("d");
-            }
-            if (Input.GetKeyDown(KeyCode.S))
-            {
-                ticker = 0;
-                slide("s");
-            }
-            if (Input.GetKeyDown(KeyCode.A))
-            {
-                ticker = 0;
-                slide("a");
-            }
-        }
-    }
-
-    public void Swipe()
-    {
-        if (canMove == true)
-        {
-            if (TouchControl.swipeUp == true)
+            if (Input.GetKeyDown(KeyCode.W) || TouchControl.swipeUp == true)
             {
                 ticker = 0;
                 slide("w");
                 TouchControl.swipeUp = false;
             }
-            if (TouchControl.swipeRight == true)
+            if (Input.GetKeyDown(KeyCode.D)|| TouchControl.swipeRight == true)
             {
                 ticker = 0;
                 slide("d");
                 TouchControl.swipeRight = false;
             }
-            if (TouchControl.swipeDown == true)
+            if (Input.GetKeyDown(KeyCode.S)|| TouchControl.swipeDown == true)
             {
                 ticker = 0;
                 slide("s");
                 TouchControl.swipeDown = false;
             }
-            if (TouchControl.swipeLeft == true)
+            if (Input.GetKeyDown(KeyCode.A)|| TouchControl.swipeLeft == true)
             {
                 ticker = 0;
                 slide("a");
@@ -113,6 +78,7 @@ public class GameControl : MonoBehaviour
             }
         }
     }
+
 
     public void FullCheck()
     {

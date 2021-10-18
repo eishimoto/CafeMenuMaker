@@ -10,21 +10,17 @@ public class ChangeScene : MonoBehaviour
 
     //Panel
     [SerializeField] private GameObject credit;
+
+    [SerializeField] GameObject gameMode;
  
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void StartGame(int sceneNumber)
     {
         SceneManager.LoadScene(sceneNumber);
+    }
+
+    public void GameSelect()
+    {
+        gameMode.SetActive(true);
     }
 
     public void CreditPanel()

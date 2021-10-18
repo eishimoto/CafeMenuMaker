@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2271183598670859985}
   - component: {fileID: 1701803048126023839}
   m_Layer: 5
-  m_Name: SquarePrefab
+  m_Name: SquarePrefab 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -94,7 +94,7 @@ MonoBehaviour:
   valueDsiplayText: {fileID: 2449300079380430942}
   speed: 6000
   value: 0
-  multiply: 1
+  multiply: 0
 --- !u!114 &2271183598670859985
 MonoBehaviour:
   m_ObjectHideFlags: 0
