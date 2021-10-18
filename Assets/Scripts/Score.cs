@@ -21,6 +21,9 @@ public class Score : MonoBehaviour
     [SerializeField] private int SceneIndex;
     public int scoreToBeat;
 
+    //bool
+    private bool stopWinPanel = false;
+
     //Instance to use funcion in other script
     public static Score instance;
     private void OnEnable()
@@ -59,7 +62,7 @@ public class Score : MonoBehaviour
 
     public void WinPanel(int scoreToWin)
     { 
-        if(scoreToWin == scoreToBeat)
+        if(scoreToWin == scoreToBeat && stopWinPanel == false)
         {
             winPanel.SetActive(true);
             GameControl.canMove = false;
@@ -98,6 +101,7 @@ public class Score : MonoBehaviour
     {
         winPanel.SetActive(false);
         GameControl.canMove = true;
+        stopWinPanel = true;
     }
 
     public void RestartLose()

@@ -30,9 +30,6 @@ public class SquarePrefab : MonoBehaviour
         myImage = GetComponent<Image>();
         myImage.color = GameControl.instance.myColors[colorindex];
     }
-
-   
-
     int GetColorIndex(int number)
     {
         int index = 0;

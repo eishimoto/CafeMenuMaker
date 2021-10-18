@@ -6705,7 +6705,7 @@ MonoBehaviour:
   - {r: 0.7002876, g: 1, b: 0, a: 1}
   - {r: 0.36112404, g: 1, b: 0, a: 1}
   - {r: 0, g: 1, b: 0.33205724, a: 1}
-  _keyboardOrTouch: 1
+  _keyboardOneOrTouchTwo: 1
   minValue: 2
   maxValue: 4
   minValue2: 3

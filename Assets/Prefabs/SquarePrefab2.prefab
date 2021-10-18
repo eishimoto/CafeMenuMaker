@@ -91,7 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   valueDsiplayText: {fileID: 5467372055031698189}
-  speed: 3000
+  speed: 6000
   value: 0
 --- !u!114 &-7755433264769414159
 MonoBehaviour:

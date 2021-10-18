@@ -23,12 +23,11 @@ public class GameControl : MonoBehaviour
     public Color[] myColors;
 
     //int to change in inspector
-    [SerializeField] private int _keyboardOrTouch;
+    [SerializeField] private int _keyboardOneOrTouchTwo;
     [SerializeField] private int minValue;
     [SerializeField] private int maxValue;
     [SerializeField] private int minValue2;
     [SerializeField] private int maxValue2;
-
 
     private void OnEnable()
     {
@@ -47,11 +46,11 @@ public class GameControl : MonoBehaviour
 
     private void Update()
     {
-        if (_keyboardOrTouch == 1)
+        if (_keyboardOneOrTouchTwo == 1)
         {
             KeyboardControl();
         }
-        if (_keyboardOrTouch == 2)
+        if (_keyboardOneOrTouchTwo == 2)
         {
             Swipe();
         }
@@ -118,6 +117,7 @@ public class GameControl : MonoBehaviour
     public void FullCheck()
     {
         bool isFull = true;
+
         for (int i = 0; i < allSlots.Length; i++)
         {
             if (allSlots[i].fill == null)

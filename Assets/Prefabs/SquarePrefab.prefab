@@ -92,7 +92,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   valueDsiplayText: {fileID: 2449300079380430942}
-  speed: 3000
+  speed: 6000
   value: 0
 --- !u!114 &2271183598670859985
 MonoBehaviour:

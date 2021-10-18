@@ -47,25 +47,21 @@ public class TouchControl : MonoBehaviour
                 //up
                 if (currentSwipe.y > 0 && currentSwipe.x > -0.5f && currentSwipe.x < 0.5f)
                 {
-                    Debug.Log("up swipe");
                     swipeUp = true;
                 }
                 //down
                 if (currentSwipe.y < 0 && currentSwipe.x > -0.5f && currentSwipe.x < 0.5f)
                 {
-                    Debug.Log("down swipe");
                     swipeDown = true;
                 }
                 //left
                 if (currentSwipe.x < 0 && currentSwipe.y > -0.5f && currentSwipe.y < 0.5f)
                 {
-                    Debug.Log("left swipe");
                     swipeLeft = true;
                 }
                 //right
                 if (currentSwipe.x > 0 && currentSwipe.y > -0.5f && currentSwipe.y < 0.5f)
                 {
-                    Debug.Log("right swipe");
                     swipeRight = true;
                 }
             }
