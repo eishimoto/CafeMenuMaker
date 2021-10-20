@@ -1492,7 +1492,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1200, y: 2200}
+  m_SizeDelta: {x: 1200, y: 2400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &449170476
 MonoBehaviour:
@@ -4591,7 +4591,8 @@ MonoBehaviour:
   winPanel: {fileID: 175099578}
   losePanel: {fileID: 1990599601}
   pausePanel: {fileID: 874501284}
-  SceneIndex: 3
+  sceneIndex: 3
+  menuIndex: 0
   scoreToBeat: 2
 --- !u!1001 &1275496561
 PrefabInstance:
