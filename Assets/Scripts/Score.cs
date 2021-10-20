@@ -30,6 +30,19 @@ public class Score : MonoBehaviour
     //bool
     private bool stopWinPanel = false;
 
+    //static
+    public static bool fourScore1;
+    public static bool fourScore2;
+    public static bool fiveScore1;
+    public static bool fiveScore2;
+    public static bool reverseScore1;
+    public static bool reverseScore2;
+
+    //foodIcons
+    [SerializeField] private GameObject[] foodIcon;
+    [SerializeField] private int minPoints;
+    [SerializeField] private int maxPoints;
+
     //Instance to use funcion in other script
     public static Score instance;
     private void OnEnable()
@@ -45,14 +58,44 @@ public class Score : MonoBehaviour
         if (fourScore)
         {
             highScoreText.text = PlayerPrefs.GetInt("HighScore", 0).ToString();
+
+            if (PlayerPrefs.GetInt("HighScore", myHighScore) >= minPoints)
+            {
+                foodIcon[0].SetActive(true);
+            }
+
+            if (PlayerPrefs.GetInt("HighScore", myHighScore) >= maxPoints)
+            {
+                foodIcon[1].SetActive(true);
+            }
         }
         if (fiveScore)
         {
             highScoreText.text = PlayerPrefs.GetInt("HighScore1", 0).ToString();
+
+            if (PlayerPrefs.GetInt("HighScore1", myHighScore) >= minPoints)
+            {
+                foodIcon[0].SetActive(true);
+            }
+
+            if (PlayerPrefs.GetInt("HighScore1", myHighScore) >= maxPoints)
+            {
+                foodIcon[1].SetActive(true);
+            }
         }
         if (reverseScore)
         {
             highScoreText.text = PlayerPrefs.GetInt("HighScore2", 0).ToString();
+
+            if (PlayerPrefs.GetInt("HighScore2", myHighScore) >= minPoints)
+            {
+                foodIcon[0].SetActive(true);
+            }
+
+            if (PlayerPrefs.GetInt("HighScore2", myHighScore) >= maxPoints)
+            {
+                foodIcon[1].SetActive(true);
+            }
         }
 
     }
@@ -77,6 +120,26 @@ public class Score : MonoBehaviour
                 myHighScore = score;
                 highScoreText.text = myHighScore.ToString();
                 PlayerPrefs.SetInt("HighScore", myHighScore);
+
+                if(myHighScore == minPoints)
+                {
+                    fourScore1 = true;                   
+                }
+
+                if(myHighScore == maxPoints)
+                {
+                    fourScore2 = true;
+                }
+            }
+
+            if (PlayerPrefs.GetInt("HighScore", myHighScore) >= minPoints)
+            {
+                foodIcon[0].SetActive(true);
+            }
+
+            if (PlayerPrefs.GetInt("HighScore", myHighScore) >= maxPoints)
+            {
+                foodIcon[1].SetActive(true);
             }
         }
 
@@ -87,6 +150,28 @@ public class Score : MonoBehaviour
                 myHighScore = score;
                 highScoreText.text = myHighScore.ToString();
                 PlayerPrefs.SetInt("HighScore1", myHighScore);
+
+                if (myHighScore == minPoints)
+                {
+                    fiveScore1 = true;
+                    foodIcon[0].SetActive(true);
+                }
+
+                if (myHighScore == maxPoints)
+                {
+                    fiveScore2 = true;
+                    foodIcon[1].SetActive(true);
+                }
+            }
+
+            if (PlayerPrefs.GetInt("HighScore1", myHighScore) >= minPoints)
+            {
+                foodIcon[0].SetActive(true);
+            }
+
+            if (PlayerPrefs.GetInt("HighScore1", myHighScore) >= maxPoints)
+            {
+                foodIcon[1].SetActive(true);
             }
         }
 
@@ -97,6 +182,28 @@ public class Score : MonoBehaviour
                 myHighScore = score;
                 highScoreText.text = myHighScore.ToString();
                 PlayerPrefs.SetInt("HighScore2", myHighScore);
+
+                if (myHighScore == minPoints)
+                {
+                    reverseScore1 = true;
+                    foodIcon[0].SetActive(true);
+                }
+
+                if (myHighScore == maxPoints)
+                {
+                    reverseScore2 = true;
+                    foodIcon[1].SetActive(true);
+                }
+            }
+
+            if (PlayerPrefs.GetInt("HighScore2", myHighScore) >= minPoints)
+            {
+                foodIcon[0].SetActive(true);
+            }
+
+            if (PlayerPrefs.GetInt("HighScore2", myHighScore) >= maxPoints)
+            {
+                foodIcon[1].SetActive(true);
             }
         }
     }
