@@ -8,6 +8,8 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField] private AudioSource _musicSource, _effectsSource;
 
+    public static bool changeSound;
+
     private void Awake()
     {
         if(Instance == null)
@@ -34,10 +36,28 @@ public class AudioManager : MonoBehaviour
     public void ToggleEffects()
     {
         _effectsSource.mute = !_effectsSource.mute;
+
+        if(_effectsSource.mute)
+        {
+            changeSound = true;
+        }
+        else
+        {
+            changeSound = false;
+        }
     }
 
     public void ToogleMusic()
     {
         _musicSource.mute = !_musicSource.mute;
+
+        if (_musicSource.mute)
+        {
+            changeSound = true;
+        }
+        else
+        {
+            changeSound = false;
+        }
     }
 }

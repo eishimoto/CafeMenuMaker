@@ -4985,8 +4985,6 @@ MonoBehaviour:
   - {r: 0, g: 1, b: 0.33205724, a: 1}
   minValue: 2
   maxValue: 4
-  minValue2: 2
-  maxValue2: 4
 --- !u!114 &1266795600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6305,6 +6303,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _toggleEffects: 1
   _toggleMusic: 0
+  sounds:
+  - {fileID: 569776789464264597, guid: 84c4203883724804db8dca0dc953778c, type: 3}
+  - {fileID: 5277996054935697143, guid: 84c4203883724804db8dca0dc953778c, type: 3}
 --- !u!114 &1505502039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6738,6 +6739,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _toggleEffects: 0
   _toggleMusic: 1
+  sounds:
+  - {fileID: 21300000, guid: f5ecfc75d65dfdd48b2ea1ff6c9f90fa, type: 3}
+  - {fileID: -4075234662501015197, guid: 84c4203883724804db8dca0dc953778c, type: 3}
 --- !u!114 &1635969989
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -25,8 +25,6 @@ public class GameControl : MonoBehaviour
     //int to change in inspector
     [SerializeField] private int minValue;
     [SerializeField] private int maxValue;
-    [SerializeField] private int minValue2;
-    [SerializeField] private int maxValue2;
 
     private void OnEnable()
     {
@@ -113,23 +111,15 @@ public class GameControl : MonoBehaviour
         SquarePrefab SquarePrefab = tempFill.GetComponent<SquarePrefab>();
         allSlots[spawnPlace].GetComponent<Slot>().fill = SquarePrefab;
 
-        int chance = UnityEngine.Random.Range(0, 20);
+        int chance = UnityEngine.Random.Range(0, 10);
 
         if (chance < 8f)
         {
             SquarePrefab.FillUpdate(minValue);
         }
-        else if(chance <= 10f)
+        else if(chance >= 8f)
         {
             SquarePrefab.FillUpdate(maxValue);
-        }
-        if(chance < 18f && chance > 10f)
-        {
-            SquarePrefab.FillUpdate(minValue2);
-        }
-        if(chance >= 18f) 
-        {
-            SquarePrefab.FillUpdate(maxValue2);
         }
     }
 }

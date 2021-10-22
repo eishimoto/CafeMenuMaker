@@ -1490,8 +1490,6 @@ MonoBehaviour:
   - {r: 0.42352945, g: 0.023529414, b: 0.13725491, a: 1}
   minValue: 1024
   maxValue: 2048
-  minValue2: 1024
-  maxValue2: 2048
 --- !u!114 &327642156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7853,6 +7851,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _toggleEffects: 1
   _toggleMusic: 0
+  sounds:
+  - {fileID: 569776789464264597, guid: 84c4203883724804db8dca0dc953778c, type: 3}
+  - {fileID: 5277996054935697143, guid: 84c4203883724804db8dca0dc953778c, type: 3}
 --- !u!114 &1820455678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8209,6 +8210,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _toggleEffects: 0
   _toggleMusic: 1
+  sounds:
+  - {fileID: 21300000, guid: f5ecfc75d65dfdd48b2ea1ff6c9f90fa, type: 3}
+  - {fileID: -4075234662501015197, guid: 84c4203883724804db8dca0dc953778c, type: 3}
 --- !u!114 &1847495888
 MonoBehaviour:
   m_ObjectHideFlags: 0
