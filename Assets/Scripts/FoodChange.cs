@@ -9,15 +9,13 @@ public class FoodChange : MonoBehaviour
 
     private Image image;
 
-    [SerializeField] private bool food1;
-    [SerializeField] private bool food2;
+    [SerializeField] private bool food1 = false;
+    [SerializeField] private bool food2 = false;
 
     public static bool food1static, food2static;
     void Start()
     {
         image = GetComponent<Image>();
-        food1static = false;
-        food2static = false;
     }
 
     // Update is called once per frame
