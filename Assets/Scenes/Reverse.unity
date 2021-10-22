@@ -7298,13 +7298,14 @@ GameObject:
   - component: {fileID: 1657417529}
   - component: {fileID: 1657417531}
   - component: {fileID: 1657417530}
+  - component: {fileID: 1657417532}
   m_Layer: 5
   m_Name: food
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1657417529
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7344,7 +7345,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 2008176328888099268, guid: 84c4203883724804db8dca0dc953778c, type: 3}
+  m_Sprite: {fileID: -4270788898213704739, guid: 84c4203883724804db8dca0dc953778c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7362,6 +7363,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1657417528}
   m_CullTransparentMesh: 1
+--- !u!114 &1657417532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1657417528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86be0fde2655b4c4daf989ea5a1afc12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coloredSprite: {fileID: -8368715212557388470, guid: 84c4203883724804db8dca0dc953778c, type: 3}
+  food1: 1
+  food2: 0
 --- !u!1001 &1676951642
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8315,13 +8331,14 @@ GameObject:
   - component: {fileID: 1841751905}
   - component: {fileID: 1841751904}
   - component: {fileID: 1841751903}
+  - component: {fileID: 1841751906}
   m_Layer: 5
   m_Name: food
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1841751903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8342,7 +8359,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 8055168808294297747, guid: 84c4203883724804db8dca0dc953778c, type: 3}
+  m_Sprite: {fileID: -84283723459654293, guid: 84c4203883724804db8dca0dc953778c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8379,6 +8396,21 @@ RectTransform:
   m_AnchoredPosition: {x: 512, y: -400.06}
   m_SizeDelta: {x: 169.06, y: 415.87}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1841751906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841751902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86be0fde2655b4c4daf989ea5a1afc12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coloredSprite: {fileID: 8055168808294297747, guid: 84c4203883724804db8dca0dc953778c, type: 3}
+  food1: 0
+  food2: 1
 --- !u!1 &1847495885
 GameObject:
   m_ObjectHideFlags: 0

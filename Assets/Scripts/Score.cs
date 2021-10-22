@@ -61,12 +61,12 @@ public class Score : MonoBehaviour
 
             if (PlayerPrefs.GetInt("HighScore", myHighScore) >= minPoints)
             {
-                foodIcon[0].SetActive(true);
+                FoodChange.food1static = true;
             }
 
             if (PlayerPrefs.GetInt("HighScore", myHighScore) >= maxPoints)
             {
-                foodIcon[1].SetActive(true);
+                FoodChange.food2static = true;
             }
         }
         if (fiveScore)
@@ -75,12 +75,12 @@ public class Score : MonoBehaviour
 
             if (PlayerPrefs.GetInt("HighScore1", myHighScore) >= minPoints)
             {
-                foodIcon[0].SetActive(true);
+                FoodChange.food1static = true;
             }
 
             if (PlayerPrefs.GetInt("HighScore1", myHighScore) >= maxPoints)
             {
-                foodIcon[1].SetActive(true);
+                FoodChange.food2static = true;
             }
         }
         if (reverseScore)
@@ -89,12 +89,12 @@ public class Score : MonoBehaviour
 
             if (PlayerPrefs.GetInt("HighScore2", myHighScore) >= minPoints)
             {
-                foodIcon[0].SetActive(true);
+                FoodChange.food1static = true;
             }
 
             if (PlayerPrefs.GetInt("HighScore2", myHighScore) >= maxPoints)
             {
-                foodIcon[1].SetActive(true);
+                FoodChange.food2static = true;
             }
         }
 
@@ -123,23 +123,25 @@ public class Score : MonoBehaviour
 
                 if(myHighScore == minPoints)
                 {
-                    fourScore1 = true;                   
+                    fourScore1 = true;
+                    FoodChange.food1static = true;
                 }
 
                 if(myHighScore == maxPoints)
                 {
                     fourScore2 = true;
+                    FoodChange.food2static = true;
                 }
             }
 
             if (PlayerPrefs.GetInt("HighScore", myHighScore) >= minPoints)
             {
-                foodIcon[0].SetActive(true);
+                FoodChange.food1static = true;
             }
 
             if (PlayerPrefs.GetInt("HighScore", myHighScore) >= maxPoints)
             {
-                foodIcon[1].SetActive(true);
+                FoodChange.food2static = true;
             }
         }
 
@@ -154,24 +156,24 @@ public class Score : MonoBehaviour
                 if (myHighScore == minPoints)
                 {
                     fiveScore1 = true;
-                    foodIcon[0].SetActive(true);
+                    FoodChange.food1static = true;
                 }
 
                 if (myHighScore == maxPoints)
                 {
                     fiveScore2 = true;
-                    foodIcon[1].SetActive(true);
+                    FoodChange.food2static = true;
                 }
             }
 
             if (PlayerPrefs.GetInt("HighScore1", myHighScore) >= minPoints)
             {
-                foodIcon[0].SetActive(true);
+                FoodChange.food1static = true;
             }
 
             if (PlayerPrefs.GetInt("HighScore1", myHighScore) >= maxPoints)
             {
-                foodIcon[1].SetActive(true);
+                FoodChange.food2static = true;
             }
         }
 
@@ -186,24 +188,24 @@ public class Score : MonoBehaviour
                 if (myHighScore == minPoints)
                 {
                     reverseScore1 = true;
-                    foodIcon[0].SetActive(true);
+                    FoodChange.food1static = true;
                 }
 
                 if (myHighScore == maxPoints)
                 {
                     reverseScore2 = true;
-                    foodIcon[1].SetActive(true);
+                    FoodChange.food2static = true;
                 }
             }
 
             if (PlayerPrefs.GetInt("HighScore2", myHighScore) >= minPoints)
             {
-                foodIcon[0].SetActive(true);
+                FoodChange.food1static = true;
             }
 
             if (PlayerPrefs.GetInt("HighScore2", myHighScore) >= maxPoints)
             {
-                foodIcon[1].SetActive(true);
+                FoodChange.food2static = true;
             }
         }
     }
