@@ -12,6 +12,7 @@ public class Slot : MonoBehaviour
 
     public SquarePrefab fill;
 
+    [SerializeField] private int tick;
     private void OnEnable()
     {
         GameControl.slide += OnSlide;
@@ -62,7 +63,7 @@ public class Slot : MonoBehaviour
         }
 
         GameControl.ticker++;
-        if (GameControl.ticker == 4)
+        if (GameControl.ticker == tick)
         {
             GameControl.instance.FullCheck();
         }
