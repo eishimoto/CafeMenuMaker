@@ -1431,12 +1431,12 @@ MonoBehaviour:
   pausePanel: {fileID: 1372826568}
   sceneIndex: 3
   menuIndex: 0
-  scoreToBeat: 2
+  scoreToBeat: 64
   foodIcon:
   - {fileID: 1657417528}
   - {fileID: 1841751902}
-  minPoints: 1000
-  maxPoints: 2000
+  minPoints: 100
+  maxPoints: 200
 --- !u!114 &327642155
 MonoBehaviour:
   m_ObjectHideFlags: 0
